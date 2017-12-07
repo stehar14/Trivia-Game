@@ -1,0 +1,145 @@
+<!-- Trivia Game
+Written by: Steve Harold
+Created: 12/5/2017
+Last Updated: 12/7/2017 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <title></title>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Trivia Game</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">How to Play</a>
+                    </li>
+                    <li>
+                        <a href="#">Game 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Game 2</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div id="trivia" class="container">
+
+        <div class="row">
+        	<div class="col-md-1"></div>
+            <div id="number" class="col-md-1 text-center">
+                <p>Question #</p>
+            </div>
+            <div class="col-md-8"></div>
+            <div id="timer" class="col-md-1 text-center">
+            	<p>00:20</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+        	<div class="col-md-1"></div>
+			<div id = "question" class="col-md-10 text-center">
+				<p>Question</p>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="row">
+	        	<div class="col-md-2"></div>
+				<div id = "answer1" class="col-md-8 text-center">
+					<p>Answer 1</p>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+			<div class="row">
+	        	<div class="col-md-2"></div>
+				<div id = "answer2" class="col-md-8 text-center">
+					<p>Answer 2</p>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+			<div class="row">
+	        	<div class="col-md-2"></div>
+				<div id = "answer3" class="col-md-8 text-center">
+					<p>Answer 3</p>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+			<div class="row">
+	        	<div class="col-md-2"></div>
+				<div id = "answer4" class="col-md-8 text-center">
+					<p>Answer 4</p>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+		 <div class="row">
+        	<div class="col-md-1"></div>
+            <div id="score" class="col-md-1 text-center">
+                <p>Score</p>
+            </div>
+            <div class="col-md-8"></div>
+            <div id="right-wrong" class="col-md-1 text-center">
+            	<p>0 / 0</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+	<div id="result" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Your Results</h1>
+				<h3 id= "right">Number of Right Answers:</h3>
+				<h3 id="wrong">Number of Wrong Answers:</h3>
+				<h3 id="result-score">Score:</h3>
+			</div>
+		</div>
+	</div>
+    <!-- My Javascript -->
+    <script src="assets/javascript/app.js"></script>
+
+    
+
+</body>
+
+</html>
