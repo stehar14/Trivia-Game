@@ -174,6 +174,24 @@ function gameOver() {
 	$("#result-score").html("<h3>Score: " + score + "</h3>");
 	$("#trivia").hide();
 	$("#result").show();
+	$("#replay").on("click", function() {
+		replay();
+	});
+};
+
+function replay() {
+	activeIndex = 0;
+	numRight = 0;
+	numWrong = 0;
+	numAnswered = 0;
+	score = 0;
+	timer.reset();
+	timer.start();
+	displayQuestion(activeIndex);
+	$("#score").text("Score: " + score);
+	$("#right-wrong").text(numRight + " / " + numAnswered);
+	$("#trivia").show();
+	$("#result").hide();
 };
 
 $(document).ready(function() {
