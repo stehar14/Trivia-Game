@@ -22,6 +22,7 @@ var timer = {
 // Timer Functions  
   reset: function() {
     timer.time = 20;
+    clearInterval(intervalId);
     $("#timer").html("<h3>00:20</h3>");
   },
   
@@ -40,16 +41,7 @@ var timer = {
 	    $("#timer").html("<h3>" + converted + "</h3>");
 	}
 	else {
-		numWrong++;
-		numAnswered++;
-		score = score - 100;
-		$("#score").html("<h3>Score: " + score + "</h3>");
-		timer.stop();
-		timer.reset();
-		activeIndex++;
-		displayQuestion(activeIndex);
-		timer.start();
-		$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
+		wrongAnswer();
 	};
   },
   
@@ -73,15 +65,21 @@ var timer = {
 var quiz = [{
 	question: "What is the color of this screen?", 
  	answers: ["white", "green", "yellow", "black"],
- 	correct: 0,
+ 	get correct() {
+ 		return this.answers.indexOf("white")
+ 	}
 },{
 	question: "What month is it?",
 	answers: ["December", "January", "February", "October"],
-	correct: 0,
+	get correct() {
+		return this.answers.indexOf("December")
+	}
 },{
 	question: "How old are you?",
 	answers: ["26", "1", "57", "12"],
-	correct: 0,
+	get correct() {
+		return this.answers.indexOf("26")
+	}
 }];
 
 // Function to display questions in random order
@@ -105,13 +103,15 @@ function shuffle(array) {
      return array;
  }
 
+
 // Global functions
 function displayQuestion(index) {
 	$("#question").html("<h3>" + quiz[index].question + "</h3>");
-	$("#answer1").html("<h3>" + quiz[index].answers[0] + "</h3>");
-	$("#answer2").html("<h3>" + quiz[index].answers[1] + "</h3>");
-	$("#answer3").html("<h3>" + quiz[index].answers[2] + "</h3>");
-	$("#answer4").html("<h3>" + quiz[index].answers[3] + "</h3>");
+	shuffle(quiz[index].answers);
+	$("#answer1").html("<h3 class='answer-div'>" + quiz[index].answers[0] + "</h3>");
+	$("#answer2").html("<h3 class='answer-div'>" + quiz[index].answers[1] + "</h3>");
+	$("#answer3").html("<h3 class='answer-div'>" + quiz[index].answers[2] + "</h3>");
+	$("#answer4").html("<h3 class='answer-div'>" + quiz[index].answers[3] + "</h3>");
 	$("#number").html("<h3># " + (index+1) + "</h3>");
 };
 

@@ -4,10 +4,18 @@
  Last Updated: 12/7/2017 */
 
 
-.col-md-8 {
-	width: 100%;
-	background-color: lightBlue;
+.col-md-4 {
+	background-color: transparent;	
+}
 
+.col-md-4 h3 {
+	color: green;
+}
+
+.answer-div {
+	margin: 5px;
+	background-color: black;
+	padding: 20px;
 }
 
 video#bgVideo {
