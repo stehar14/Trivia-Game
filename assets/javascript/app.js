@@ -22,7 +22,7 @@ var timer = {
 // Timer Functions  
   reset: function() {
     timer.time = 20;
-    $("#timer").text("00:20");
+    $("#timer").html("<h3>00:20</h3>");
   },
   
   start: function() {
@@ -37,20 +37,19 @@ var timer = {
   	if (timer.time > 0) {
 	    timer.time--;
 	    var converted = timer.timeConverter(timer.time);
-	    console.log(converted);
-	    $("#timer").text(converted);
+	    $("#timer").html("<h3>" + converted + "</h3>");
 	}
 	else {
 		numWrong++;
 		numAnswered++;
 		score = score - 100;
-		$("#score").text("Score: " + score);
+		$("#score").html("<h3>Score: " + score + "</h3>");
 		timer.stop();
 		timer.reset();
 		activeIndex++;
 		displayQuestion(activeIndex);
 		timer.start();
-		$("#right-wrong").text(numRight + " / " + numAnswered);
+		$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 	};
   },
   
@@ -108,12 +107,12 @@ function shuffle(array) {
 
 // Global functions
 function displayQuestion(index) {
-	$("#question").text(quiz[index].question);
-	$("#answer1").text(quiz[index].answers[0]);
-	$("#answer2").text(quiz[index].answers[1]);
-	$("#answer3").text(quiz[index].answers[2]);
-	$("#answer4").text(quiz[index].answers[3]);
-	$("#number").text("# " + (index+1));
+	$("#question").html("<h3>" + quiz[index].question + "</h3>");
+	$("#answer1").html("<h3>" + quiz[index].answers[0] + "</h3>");
+	$("#answer2").html("<h3>" + quiz[index].answers[1] + "</h3>");
+	$("#answer3").html("<h3>" + quiz[index].answers[2] + "</h3>");
+	$("#answer4").html("<h3>" + quiz[index].answers[3] + "</h3>");
+	$("#number").html("<h3># " + (index+1) + "</h3>");
 };
 
 function scoreEval() {
@@ -122,19 +121,18 @@ function scoreEval() {
 
 function initializeQuiz() {
 	shuffle(quiz);
-	$("#score").text("Score: 0")
+	$("#score").html("<h3>Score: 0</h3>")
 	activeIndex = 0;
 	displayQuestion(activeIndex);
 	timer.start();
 };
 
 function rightAnswer() {
-	console.log("Correct");
 	numRight++;
 	numAnswered++;
 	scoreEval();
 	score = score + tempScore;
-	$("#score").text("Score: " + score);
+	$("#score").html("<h3>Score: " + score + "</h3>");
 	timer.stop();
 	timer.reset();
 	activeIndex++;
@@ -145,16 +143,15 @@ function rightAnswer() {
 	else {
 		gameOver();
 	};
-	$("#right-wrong").text(numRight + " / " + numAnswered);
+	$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 };
 
-function wrongAnswer() {
-	console.log("Wrong");
+function wrongAnswer() {	
 	numWrong++;
 	numAnswered++;
 	scoreEval();
 	score= score - tempScore;
-	$("#score").text("Score: " + score);
+	$("#score").html("<h3>Score: " + score + "</h3>");
 	timer.stop();
 	timer.reset();
 	activeIndex++;
@@ -165,7 +162,7 @@ function wrongAnswer() {
 	else {
 		gameOver();
 	};
-	$("#right-wrong").text(numRight + " / " + numAnswered);
+	$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 };
 
 function gameOver() {
@@ -188,8 +185,8 @@ function replay() {
 	timer.reset();
 	timer.start();
 	displayQuestion(activeIndex);
-	$("#score").text("Score: " + score);
-	$("#right-wrong").text(numRight + " / " + numAnswered);
+	$("#score").html("<h3>Score: " + score + "</h3>");
+	$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 	$("#trivia").show();
 	$("#result").hide();
 };
