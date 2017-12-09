@@ -5,31 +5,24 @@ Last Updated: 12/9/2017 -->
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<link href="https://fonts.googleapis.com/css?family=Bungee|Montserrat:600" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/style.css">
-
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Montserrat:600" rel="stylesheet">	
+	<!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">	
+	<!-- Favicon -->
     <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFLWKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQAAAAAREREREQAAARERABEREAAREREAERERABEREREREREBERERABEREREREREAEREREREREQAAEREREREREQAREREREQARABERERERABEAEREQEREAAAAREQAREQAAABERAAERERERERAAABERERERAAAAABEREQAAD4HwAA4AcAAMGDAACBgQAAgAEAAAGAAAABgAAAAeAAAABgAAAGYAAABmAAAIfhAACH4QAAwAMAAOAHAAD4HwAA" rel="icon" type="image/x-icon" />
-
-
     <title>Coding Trivia</title>
-
 </head>
-
 <body>
+	<!-- Start message -->
 	<div id="start-div" class="container">
 		<div class="col-md-12 text-center">
 			<h1 id="start-head">Coding Trivia</h1>
@@ -37,7 +30,7 @@ Last Updated: 12/9/2017 -->
 			<button id="start" class= "btn-lg btn-success"><p>Start the Game</p></button>
 		</div>
 	</div>
-    <!-- Page Content -->
+    <!-- Trivia Content -->
     <div id="trivia" class="container">
 
         <div class="row">
@@ -101,10 +94,10 @@ Last Updated: 12/9/2017 -->
             </div>
             <div class="col-md-1"></div>
         </div>
-        <!-- /.row -->
+        
 
     </div>
-    <!-- /.container -->
+    <!-- Results -->
 	<div id="result" class="container">
 		<div class="row">
 			<div id="res-bg" class="col-md-12 text-center">
@@ -116,17 +109,15 @@ Last Updated: 12/9/2017 -->
 			</div>
 		</div>
 	</div>
+	<!-- Background video -->
     <video id="bgVideo" preload="true" autoplay loop muted>
       <source src="assets/images/background.mp4" type="video/mp4" >
     </video>
+    <!-- Background music -->
     <audio id="music" preload="true" autoplay loop>
 		<source src="assets/audio/music.mp3" type="audio/mp3">
 	</audio>
     <!-- My Javascript -->
     <script src="assets/javascript/app.js"></script>
-
-    
-
 </body>
-
 </html>

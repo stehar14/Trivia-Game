@@ -233,6 +233,7 @@ var quiz = [{
 }
 ];
 
+// Global functions
 // Function to display questions in random order
 function shuffle(array) { 
      var currentIndex = array.length,
@@ -253,9 +254,7 @@ function shuffle(array) {
 
      return array;
  }
-
-
-// Global functions
+// Function to display question
 function displayQuestion(index) {
 	$("#question").html("<h3>" + quiz[index].question + "</h3>");
 	shuffle(quiz[index].answers);
@@ -265,11 +264,11 @@ function displayQuestion(index) {
 	$("#answer4").html("<h3 class='answer-div'>" + quiz[index].answers[3] + "</h3>");
 	$("#number").html("<h3># " + (index+1) + "</h3>");
 };
-
+// Funtion to calculate score after answer is given
 function scoreEval() {
 	tempScore = (timer.time * 10) + 100;
 };
-
+// Function to start trivia
 function initializeQuiz() {
 	shuffle(quiz);
 	$("#score").html("<h3>Score: 0</h3>")
@@ -277,7 +276,7 @@ function initializeQuiz() {
 	displayQuestion(activeIndex);
 	timer.start();
 };
-
+// Function to run when right answer select
 function rightAnswer() {
 	numRight++;
 	numAnswered++;
@@ -296,7 +295,7 @@ function rightAnswer() {
 	};
 	$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 };
-
+// Function to run on wrong answer
 function wrongAnswer() {	
 	numWrong++;
 	numAnswered++;
@@ -315,7 +314,7 @@ function wrongAnswer() {
 	};
 	$("#right-wrong").html("<h3>" + numRight + " / " + numAnswered + "</h3>");
 };
-
+// Function to run when game ends
 function gameOver() {
 	$("#right").html("<h3>Number of Right Answers: " + numRight + "</h3>");
 	$("#wrong").html("<h3>Number of Wrong Answers: " + numWrong + "</h3>");
@@ -326,7 +325,7 @@ function gameOver() {
 		replay();
 	});
 };
-
+// Function to start game over with new questions
 function replay() {
 	activeIndex = 0;
 	numRight = 0;
@@ -342,6 +341,7 @@ function replay() {
 	$("#result").hide();
 };
 
+// Main
 $(document).ready(function() {
 	$("#trivia").hide();
 	$("#result").hide();
@@ -359,7 +359,6 @@ $(document).ready(function() {
 				};			
 			} 
 			else {
-				// TODO show replay button
 				gameOver();
 			};
 		});
@@ -374,7 +373,6 @@ $(document).ready(function() {
 				};			
 			} 
 			else {
-				// TODO show replay button
 				gameOver();
 			};
 		});
@@ -389,7 +387,6 @@ $(document).ready(function() {
 				};			
 			} 
 			else {
-				// TODO show replay button
 				gameOver();
 			};
 		});
@@ -404,7 +401,6 @@ $(document).ready(function() {
 				};			
 			} 
 			else {
-				// TODO show replay button
 				gameOver();
 			};
 		});	
