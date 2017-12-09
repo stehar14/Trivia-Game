@@ -1,7 +1,7 @@
 <!-- Trivia Game
 Written by: Steve Harold
 Created: 12/5/2017
-Last Updated: 12/7/2017 -->
+Last Updated: 12/9/2017 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,15 +18,25 @@ Last Updated: 12/7/2017 -->
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Montserrat:600" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFLWKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQAAAAAREREREQAAARERABEREAAREREAERERABEREREREREBERERABEREREREREAEREREREREQAAEREREREREQAREREREQARABERERERABEAEREQEREAAAAREQAREQAAABERAAERERERERAAABERERERAAAAABEREQAAD4HwAA4AcAAMGDAACBgQAAgAEAAAGAAAABgAAAAeAAAABgAAAGYAAABmAAAIfhAACH4QAAwAMAAOAHAAD4HwAA" rel="icon" type="image/x-icon" />
 
-    <title></title>
+
+    <title>Coding Trivia</title>
 
 </head>
 
 <body>
-
+	<div id="start-div" class="container">
+		<div class="col-md-12 text-center">
+			<h1 id="start-head">Coding Trivia</h1>
+			<p>You will be asked a series of ten questions related to HTML, CSS, Javascript/JQuery, or APIs/AJAX. Questions and the order of answers will be randomized each time you play or replay the game. Answer carefully, for the faster you choose, the more points you stand to gain (or lose)!</p>
+			<button id="start" class= "btn-lg btn-success"><p>Start the Game</p></button>
+		</div>
+	</div>
     <!-- Page Content -->
     <div id="trivia" class="container">
 
@@ -50,42 +60,42 @@ Last Updated: 12/7/2017 -->
 		</div>
 		<div class="row">
 			<div class="row">
-	        	<div class="col-md-2"></div>
-					<div id = "answer1" class="col-md-4 text-center">
+	        	<div class="col-md-1"></div>
+					<div id = "answer1" class="col-md-5 text-center">
 						<div class="col-md-12 answer-div">
 							<h3>Answer 1</h3>
 						</div>
 					</div>
 	        	
-				<div id = "answer2" class="col-md-4 text-center">
+				<div id = "answer2" class="col-md-5 text-center">
 					<div class="col-md-12 answer-div">
 						<h3>Answer 2</h3>
 				</div>
 				</div>
-				<div class="col-md-2"></div>
+				<div class="col-md-1"></div>
 			</div>
 			<div class="row">
-	        	<div class="col-md-2"></div>
-				<div id = "answer3" class="col-md-4 text-center">
+	        	<div class="col-md-1"></div>
+				<div id = "answer3" class="col-md-5 text-center">
 					<div class="col-md-12 answer-div">	
 						<h3>Answer 3</h3>
 					</div>
 				</div>
 				
-				<div id = "answer4" class="col-md-4 text-center">
+				<div id = "answer4" class="col-md-5 text-center">
 					<div class="col-md-12 answer-div">	
 						<h3>Answer 4</h3>
 					</div>
 				</div>
-				<div class="col-md-2"></div>
+				<div class="col-md-1"></div>
 			</div>
 		</div>
 		 <div class="row">
         	<div class="col-md-1"></div>
-            <div id="score" class="col-md-2 text-center">
+            <div id="score" class="col-md-3 text-center">
                 <h3>Score</h3>
             </div>
-            <div class="col-md-6"></div>
+            <div class="col-md-5"></div>
             <div id="right-wrong" class="col-md-2 text-center">
             	<h3>0 / 0</h3>
             </div>
@@ -98,17 +108,20 @@ Last Updated: 12/7/2017 -->
 	<div id="result" class="container">
 		<div class="row">
 			<div id="res-bg" class="col-md-12 text-center">
-				<h3>Your Results</h3>
-				<h3 id= "right">Number of Right Answers:</h3>
-				<h3 id="wrong">Number of Wrong Answers:</h3>
+				<h3 id= "result-head">Your Results</h3>
+				<h3 id= "right">Right Answers:</h3>
+				<h3 id="wrong">Wrong Answers:</h3>
 				<h3 id="result-score">Score:</h3>
-                <button id="replay" class="btn-lg btn-primary">Replay</button>
+                <button id="replay" class="btn-lg btn-success"><p>Replay</p></button>
 			</div>
 		</div>
 	</div>
     <video id="bgVideo" preload="true" autoplay loop muted>
       <source src="assets/images/background.mp4" type="video/mp4" >
     </video>
+    <audio id="music" preload="true" autoplay loop>
+		<source src="assets/audio/music.mp3" type="audio/mp3">
+	</audio>
     <!-- My Javascript -->
     <script src="assets/javascript/app.js"></script>
 

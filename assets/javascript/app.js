@@ -1,7 +1,7 @@
 // Trivia Game
 // Written by: Steve Harold
 // Created: 12/5/2017
-// Last Updated: 12/7/2017
+// Last Updated: 12/9/2017
 
 
 //  Variable that will hold our setInterval that runs timer
@@ -63,24 +63,175 @@ var timer = {
 
 // Quiz array with Objects in each index
 var quiz = [{
-	question: "What is the color of this screen?", 
- 	answers: ["white", "green", "yellow", "black"],
+	question: "What does HTML stand for?", 
+ 	answers: ["Hyper Text Markup Language", "Hyper Type Marking Language", "Hyperlink Text Making Language", "Hyper Tool Markup Language"],
  	get correct() {
- 		return this.answers.indexOf("white")
+ 		return this.answers.indexOf("Hyper Text Markup Language")
  	}
 },{
-	question: "What month is it?",
-	answers: ["December", "January", "February", "October"],
+	question: "Which HTML element would create the largest heading?",
+	answers: ["&lt;h1&gt;", "&lt;h6&gt;", "&lt;heading&gt;", "&lt;head&gt;"],
 	get correct() {
-		return this.answers.indexOf("December")
+		return this.answers.indexOf("&lt;h1&gt;")
 	}
 },{
-	question: "How old are you?",
-	answers: ["26", "1", "57", "12"],
+	question: "Which HTML element would create a link break?",
+	answers: ["&lt;br&gt;", "&lt;linebreak&gt;", "&lt;break&gt;", "&lt;lb&gt;"],
 	get correct() {
-		return this.answers.indexOf("26")
+		return this.answers.indexOf("&lt;br&gt;")
 	}
-}];
+},{
+	question: "If you were to use styling to directly alter the text size of a paragraph in an HTML file, what syntax would you use?",
+	answers: ["&lt;p size=40px&gt;", "&lt;p&gt;(size:40px)&lt;/p&gt;", "&lt;p style= 'font-size: 40px;'&gt;", "&lt;p font-size= 40px&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;p style= 'font-size: 40px;'&gt;")
+	}
+},{
+	question: "Using HTML, how would you cause a link to be ipened in a new tab or window?",
+	answers: ["&lt;a href='url' target='_blank'&gt;", "&lt;a href=new window&gt;url&lt;/a&gt;", "&lt;link href='url'&gt;", "&lt;a target='new_window' href='url'&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;a href='url' target='_blank'&gt;")
+	}
+},{
+	question: "How do you make a numbered list?",
+	answers: ["&lt;ol&gt;", "&lt;nl&gt;", "&lt;pl&gt;", "&lt;ul&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;ol&gt;")
+	}
+},{
+	question: "How do you make a bulleted list?",
+	answers: ["&lt;ol&gt;", "&lt;list&gt;", "&lt;ul&gt;", "&lt;bl&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;ul&gt;")
+	}
+},{
+	question: "Which of the following correctly creates an image in HTML?", 
+ 	answers: ["&lt;img src='image.gif' alt='MyImage'&gt;", "&lt;image src='image.gif' alt='MyImage'&gt;", "&lt;img href='image.gif' alt='MyImage'&gt;", "&lt;img alt='MyImage'&gt; image.gif &lt;/img&gt;"],
+ 	get correct() {
+ 		return this.answers.indexOf("&lt;img src='image.gif' alt='MyImage'&gt;")
+ 	}
+},{
+	question: "HTML comments are indicated by:",
+	answers: ["&lt;!-- comment --&gt;", "/* comment */", "no special syntax is needed", "// comment //"],
+	get correct() {
+		return this.answers.indexOf("&lt;!-- comment --&gt;")
+	}
+},{
+	question: "CSS comments are indicated by:",
+	answers: ["/* comments */", "&lt;!-- comments --&gt;", "// comments //", "no special syntax is needed"],
+	get correct() {
+		return this.answers.indexOf("/* comments */")
+	}
+},{
+	question: "Javascript comments are indicated by:",
+	answers: ["/* comments */", "&lt;!-- comments --&gt;", "// comments //", "no special syntax is needed"],
+	get correct() {
+		return this.answers.indexOf("// comments //")
+	}
+},{
+	question: "Which HTML ekement defines the title of a document?",
+	answers: ["&lt;title&gt;", "&lt;meta&gt;", "&lt;head&gt;", "&lt;header&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;title&gt;")
+	}
+},{
+	question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+	answers: ["src", "href", "alt", "id"],
+	get correct() {
+		return this.answers.indexOf("alt")
+	}
+},{
+	question: "What is the correct HTML element for playing audio files?",
+	answers: ["&lt;mp3&gt;", "&lt;wav&gt;", "&lt;sound&gt;", "&lt;audio&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;audio&gt;")
+	}
+},{
+	question: "Which HTML element defines navigation links?", 
+ 	answers: ["&lt;nav&gt;", "&lt;navbar&gt;", "&lt;navigation&gt;", "&lt;navigate&gt;"],
+ 	get correct() {
+ 		return this.answers.indexOf("&lt;nav&gt;")
+ 	}
+},{
+	question: "What does CSS stand for?",
+	answers: ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Color Style Sheets"],
+	get correct() {
+		return this.answers.indexOf("Cascading Style Sheets")
+	}
+},{
+	question: "Where in an HTML document is the correct place to refer to an external style sheet?",
+	answers: ["In the &lt;head&gt;", "In the &lt;body&gt;", "In the &lt;header&gt;", "In the &lt;footer&gt;"],
+	get correct() {
+		return this.answers.indexOf("In the &lt;head&gt;")
+	}
+},{
+	question: "Which HTML tag is used to define an internal style sheet?",
+	answers: ["&lt;css&gt;", "&lt;script&gt;", "&lt;style&gt;", "&lt;link&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;style&gt;")
+	}
+},{
+	question: "Which is the correct CSS syntax?",
+	answers: ["body {color: black;}", "body:color=black;", "{body:color=black;}", "{body;color:black;}"],
+	get correct() {
+		return this.answers.indexOf("body {color: black;}")
+	}
+},{
+	question: "Which CSS property is used to change the background color?",
+	answers: ["background-color", "color", "bg", "bgcolor"],
+	get correct() {
+		return this.answers.indexOf("background-color")
+	}
+},{
+	question: "Which CSS property is used to change the text color of an element?",
+	answers: ["text-color", "fgcolor", "color", "font-color"],
+	get correct() {
+		return this.answers.indexOf("color")
+	}
+},{
+	question: "Which CSS property controls the text size?", 
+ 	answers: ["text-style", "font-style", "text-size", "font-size"],
+ 	get correct() {
+ 		return this.answers.indexOf("font-size")
+ 	}
+},{
+	question: "HTML comments are indicated by:",
+	answers: ["&lt;!-- comment --&gt;", "/* comment */", "no special syntax is needed", "// comment //"],
+	get correct() {
+		return this.answers.indexOf("&lt;!-- comment --&gt;")
+	}
+},{
+	question: "CSS comments are indicated by:",
+	answers: ["/* comments */", "&lt;!-- comments --&gt;", "// comments //", "no special syntax is needed"],
+	get correct() {
+		return this.answers.indexOf("/* comments */")
+	}
+},{
+	question: "Javascript comments are indicated by:",
+	answers: ["/* comments */", "&lt;!-- comments --&gt;", "// comments //", "no special syntax is needed"],
+	get correct() {
+		return this.answers.indexOf("// comments //")
+	}
+},{
+	question: "Which HTML ekement defines the title of a document?",
+	answers: ["&lt;title&gt;", "&lt;meta&gt;", "&lt;head&gt;", "&lt;header&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;title&gt;")
+	}
+},{
+	question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+	answers: ["src", "href", "alt", "id"],
+	get correct() {
+		return this.answers.indexOf("alt")
+	}
+},{
+	question: "What is the correct HTML element for playing audio files?",
+	answers: ["&lt;mp3&gt;", "&lt;wav&gt;", "&lt;sound&gt;", "&lt;audio&gt;"],
+	get correct() {
+		return this.answers.indexOf("&lt;audio&gt;")
+	}
+}
+];
 
 // Function to display questions in random order
 function shuffle(array) { 
@@ -136,7 +287,7 @@ function rightAnswer() {
 	timer.stop();
 	timer.reset();
 	activeIndex++;
-	if (activeIndex < quiz.length) {
+	if (activeIndex < 10) {
 		displayQuestion(activeIndex);
 		timer.start();
 	}
@@ -155,7 +306,7 @@ function wrongAnswer() {
 	timer.stop();
 	timer.reset();
 	activeIndex++;
-	if (activeIndex < quiz.length) {
+	if (activeIndex < 10) {
 		displayQuestion(activeIndex);
 		timer.start();
 	}
@@ -192,65 +343,70 @@ function replay() {
 };
 
 $(document).ready(function() {
+	$("#trivia").hide();
 	$("#result").hide();
-	initializeQuiz();  	
-	$("#answer1").on("click", function () {
-		if (activeIndex < quiz.length) {			
-			if (quiz[activeIndex].correct === 0) {
-				rightAnswer();
-			}
+	$("#start").on("click", function() {
+		$("#start-div").hide();
+		$("#trivia").show();
+		initializeQuiz();  	
+		$("#answer1").on("click", function () {
+			if (activeIndex < quiz.length) {			
+				if (quiz[activeIndex].correct === 0) {
+					rightAnswer();
+				}
+				else {
+					wrongAnswer();
+				};			
+			} 
 			else {
-				wrongAnswer();
-			};			
-		} 
-		else {
-			// TODO show replay button
-			gameOver();
-		};
-	});
+				// TODO show replay button
+				gameOver();
+			};
+		});
 
-	$("#answer2").on("click", function () {
-		if (activeIndex < quiz.length) {			
-			if (quiz[activeIndex].correct === 1) {
-				rightAnswer();
-			}
+		$("#answer2").on("click", function () {
+			if (activeIndex < quiz.length) {			
+				if (quiz[activeIndex].correct === 1) {
+					rightAnswer();
+				}
+				else {
+					wrongAnswer();
+				};			
+			} 
 			else {
-				wrongAnswer();
-			};			
-		} 
-		else {
-			// TODO show replay button
-			gameOver();
-		};
-	});
+				// TODO show replay button
+				gameOver();
+			};
+		});
 
-	$("#answer3").on("click", function () {
-		if (activeIndex < quiz.length) {			
-			if (quiz[activeIndex].correct === 2) {
-				rightAnswer();
-			}
+		$("#answer3").on("click", function () {
+			if (activeIndex < quiz.length) {			
+				if (quiz[activeIndex].correct === 2) {
+					rightAnswer();
+				}
+				else {
+					wrongAnswer();
+				};			
+			} 
 			else {
-				wrongAnswer();
-			};			
-		} 
-		else {
-			// TODO show replay button
-			gameOver();
-		};
-	});
+				// TODO show replay button
+				gameOver();
+			};
+		});
 
-	$("#answer4").on("click", function () {
-		if (activeIndex < quiz.length) {			
-			if (quiz[activeIndex].correct === 3) {
-				rightAnswer();
-			}
+		$("#answer4").on("click", function () {
+			if (activeIndex < quiz.length) {			
+				if (quiz[activeIndex].correct === 3) {
+					rightAnswer();
+				}
+				else {
+					wrongAnswer();
+				};			
+			} 
 			else {
-				wrongAnswer();
-			};			
-		} 
-		else {
-			// TODO show replay button
-			gameOver();
-		};
-	});	
+				// TODO show replay button
+				gameOver();
+			};
+		});	
+	});
 });
