@@ -14,6 +14,17 @@
 	font-size: 35px;
 }
 
+#message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-image: url("../images/answer-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-height: 300px;
+}
+
 #start-div h1 {
 	font-size: 50px;
 	color: #00FF00;
@@ -108,7 +119,8 @@ video#bgVideo {
 #result h3,
 .col-md-5 h3,
 #start-div p,
-#replay p {
+#replay p,
+#indicator h3 {
 	-webkit-text-stroke: 3px black;
 	color: #00FF00;
 	font-size: 35px;

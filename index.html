@@ -26,7 +26,7 @@ Last Updated: 12/9/2017 -->
 	<div id="start-div" class="container">
 		<div class="col-md-12 text-center">
 			<h1 id="start-head">Coding Trivia</h1>
-			<p>You will be asked a series of ten questions related to HTML, CSS, Javascript/JQuery, or APIs/AJAX. Questions and the order of answers will be randomized each time you play or replay the game. Answer carefully, for the faster you choose, the more points you stand to gain (or lose)!</p>
+			<p>You will be asked a series of ten questions related to HTML, CSS, and Javascript/JQuery. Questions and the order of answers will be randomized each time you play or replay the game. Answer carefully, for the faster you choose, the more points you stand to gain (or lose)!</p>
 			<button id="start" class= "btn-lg btn-success"><p>Start the Game</p></button>
 		</div>
 	</div>
@@ -51,7 +51,7 @@ Last Updated: 12/9/2017 -->
 			</div>
 			<div class="col-md-1"></div>
 		</div>
-		<div class="row">
+		<div class="row answers">
 			<div class="row">
 	        	<div class="col-md-1"></div>
 					<div id = "answer1" class="col-md-5 text-center">
@@ -83,7 +83,16 @@ Last Updated: 12/9/2017 -->
 				<div class="col-md-1"></div>
 			</div>
 		</div>
-		 <div class="row">
+		<div id= "indicator" class= "row indicator text-center">
+			<div class="col-md-1"></div>
+			<div id="message" class= "col-md-10">
+				<h3 id="indicator-msg"></h3>
+				<h3>The correct answer is</h3>
+				<h3 id="answer-msg"></h3>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
         	<div class="col-md-1"></div>
             <div id="score" class="col-md-3 text-center">
                 <h3>Score</h3>
